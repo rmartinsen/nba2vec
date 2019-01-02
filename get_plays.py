@@ -21,7 +21,7 @@ def plays_to_json(game_id, output_path):
 
     with open(output_path, 'a') as f:
         for row in plays.iterrows():
-            if row['result']:
+            if row[1]['result']:
                 f.write(row[1].to_json())
                 f.write('\n')
 
@@ -57,8 +57,8 @@ def parse_scoring_play(row):
         pattern = r"([0-9]{1,2})'"
         m = re.findall(pattern, description)
         if len(m) == 0:
-            print('No distance found for {}. Classified as layup.'.format(description))
-        assert len(m) == 1
+            m = [1]
+        assert len(m) < 2
         distance = int(m[0])
         if distance <= 3:
             shot_type = 'layup'
