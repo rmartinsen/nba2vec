@@ -4,7 +4,7 @@ import json
 from nba_api.stats.static import teams
 from nba_api.stats.endpoints import leaguegamefinder
 
-from get_plays import plays_to_json
+from data_gathering.get_plays import plays_to_json
 
 def get_processed_game_ids():
     with open('out/all_plays.json') as f:
