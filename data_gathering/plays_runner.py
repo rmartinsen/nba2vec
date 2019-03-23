@@ -23,7 +23,8 @@ for team_id in team_ids:
     gamefinder = leaguegamefinder.LeagueGameFinder(team_id_nullable=team_id)
     games = gamefinder.get_data_frames()[0]
 
-    game_ids = games[games['GAME_DATE'] > '2018-10-15']['GAME_ID']
+    # game_ids = games[games['GAME_DATE'] > '2018-10-15']['GAME_ID']
+    game_ids = games[(games['GAME_DATE'] > '2017-10-16') & (games['GAME_DATE'] < '2018-04-05')]['GAME_ID']
 
     for game_id in game_ids:
         if game_id not in processed_game_ids:
