@@ -83,7 +83,7 @@ def download_play_data(local_path):
 
 
 def main():
-    timestamp = datetime.datetime.strftime(datetime.datetime.now(), '%Y%m%d')
+    timestamp = datetime.datetime.now()
     data_local_path = 'out/all_plays.json'
 
     model_bucket = 'nba2vec'
