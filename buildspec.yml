@@ -1,6 +1,10 @@
 version 0.2
 
-phases:
-  build:
-    commands:
-      - echo BOOM
+phases
+  build
+    commands
+      - echo "building docker image"
+      - docker build -t nba2vec:latest
+      - echo pushing image to ECR
+      - docker push 179210174160.dkr.ecr.us-east-1.amazonaws.com/nba2vec:latest
+
