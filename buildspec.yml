@@ -1,8 +1,8 @@
-version 0.2
+version: 0.2
 
-phases
-  build
-    commands
+phases:
+  build:
+    commands:
       - echo "building docker image"
       - docker build -t nba2vec:latest
       - echo pushing image to ECR
